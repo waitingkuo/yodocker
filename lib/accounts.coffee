@@ -8,4 +8,3 @@ Meteor.methods
     if Meteor.isClient
       Router.go('home')
 
-

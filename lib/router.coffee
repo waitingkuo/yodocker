@@ -1,5 +1,3 @@
-ROOT_URL = 'http://6f79b3de.ngrok.com'
-
 Router.configure
   waitOn: ->
     Meteor.subscribe 'repos'
@@ -23,7 +21,7 @@ if Meteor.isServer
       data:
         username: username
         api_token: 'e52430b8-68cb-409d-92a1-6cc18dc3a153'
-        link: ROOT_URL + '/login?u=' + userId
+        link: Meteor.absoluteUrl 'login?u=' + userId
 
     res.end 'ok'
 
@@ -41,7 +39,7 @@ if Meteor.isServer
       dockerHubRepo: dockerHubRepo
 
     if repo?
-      link =  ROOT_URL + '/success/' + dockerHubAccount + '/' + dockerHubRepo
+      link = Meteor.absoluteUrl 'success/' + dockerHubAccount + '/' + dockerHubRepo
       HTTP.post 'https://api.justyo.co/yo/',
         data:
           username: repo.username
