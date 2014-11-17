@@ -1,0 +1,54 @@
+template(name="error")
+  .row 
+    p please yo yodocker to login
+template(name="success")
+  .row 
+    p Congratulation!
+  .row 
+    p {{dockerHubAccount}} / {{dockerHubRepo}} 
+  .row
+    p built successfully
+  .row 
+    a(href="https://registry.hub.docker.com/u/{{dockerHubRepo}}/{{dockerHubRepo}}/") Link to dockerhub
+template(name="home")
+  .row 
+    p me: {{username}}
+  each repos
+    .row
+      a.lower(href="{{pathFor 'editRepo'}}") {{dockerHubAccount}} / {{dockerHubRepo}}
+  .row
+    a(href="{{pathFor 'newRepo'}}") +
+
+
+template(name="newRepo")
+  +autoForm collection="Repos" id="insertRepo" type="insert"
+    .row me: {{username}}
+    .row
+      p docker hub
+    .row
+      +afFieldInput class="lower" name="dockerHubAccount" placeholder="account"
+    .row
+      +afFieldInput class="lower" name="dockerHubRepo" placeholder="repo"
+    .row 
+      button(type="submit") save
+    .row
+      a(href="{{pathFor 'home'}}") back
+
+template(name="editRepo")
+  +autoForm collection="Repos" id="updateRepo" type="update" doc=this
+    .row 
+      p me: {{username}}
+    .row 
+      p dockerhub:
+    .row
+      +afFieldInput class="lower" name="dockerHubAccount" placeholder="account"
+    .row
+      +afFieldInput class="lower" name="dockerHubRepo" placeholder="repo"
+    .row 
+      p Webhook: 
+    .row
+      p.link.lower http://yodocker.co/webhook/{{dockerHubAccount}}/{{dockerHubRepo}}
+    .row 
+      button(type="submit") save
+    .row
+      a(href="{{pathFor 'home'}}") back

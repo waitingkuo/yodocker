@@ -1,0 +1,125 @@
+// blueish green
+TURQUOISE = #1ABC9C
+
+// light green
+EMERALD = #2ECC71
+
+// light blue
+PETER = #3498DB
+
+// dark blue
+ASPHALT = #34495E
+
+// green
+GREEN = #16A085
+
+// orange yellow
+SUNFLOWER = #F1C40F
+
+// blue
+BELIZE = #2980B9
+
+//dark purple
+WISTERIA = #8E44AD
+
+// red (menu button)
+ALIZARIN = #e74c3c
+
+// the main purple
+AMETHYST = #9B59B6
+
+// white
+WHITE = #FFFFFF
+
+body
+  background AMETHYST
+  font-family 'Montserrat', arial, sans-serif
+  font-weight Bold
+  //line-height 35px
+  line-height 89px
+  font-size 30px
+  color WHITE
+  text-align center
+
+
+.row
+
+  text-transform uppercase
+  display block
+
+  a, p, input
+    margin 0
+    padding 27px 0 27px 0
+    line-height 35px
+  .link
+    word-break break-all
+  a
+    display block
+    text-decoration none
+    color WHITE
+  .lower
+    text-transform lowercase
+
+  input, textarea
+    text-transform uppercase
+    background inherit
+    border none
+    width 100%
+    text-align center
+    &::-webkit-input-placeholder
+      color: rgba(255, 255, 255, 0.8)
+      text-transform uppercase
+    &:-moz-placeholder
+      color: rgba(255, 255, 255, 0.8)
+      text-transform uppercase
+    &::-moz-placeholder
+      color: rgba(255, 255, 255, 0.8)
+      text-transform uppercase
+    &:-ms-input-placeholder
+      color: rgba(255, 255, 255, 0.8)
+      text-transform uppercase
+    &:focus
+      outline none
+      &::-webkit-input-placeholder
+        color transparent
+        text-transform uppercase
+      &:-moz-placeholder
+        color transparent
+        text-transform uppercase
+      &::-moz-placeholder
+        color transparent
+        text-transform uppercase
+      &:-ms-input-placeholder
+        color transparent
+        text-transform uppercase
+
+  button
+    text-transform uppercase
+    background inherit
+    width 100%
+    text-align center
+    border none
+    &:active
+      outline none
+
+
+
+.row2
+  background AMETHYST
+
+.row:nth-of-type(8n+1)
+  background TURQUOISE
+.row:nth-of-type(8n+2)
+  background EMERALD
+.row:nth-of-type(8n+3)
+  background PETER
+.row:nth-of-type(8n+4)
+  background ASPHALT
+.row:nth-of-type(8n+5)
+  background GREEN
+.row:nth-of-type(8n+6)
+  background SUNFLOWER
+.row:nth-of-type(8n+7)
+  background BELIZE
+.row:nth-of-type(8n+8)
+  background WISTERIA
